@@ -13,7 +13,7 @@ jobs:
         args: get https://mega.nz/file/elgzCSCD#93kw336A0BMdwDcv7VGabThVeuK4vcK_FLrDMG_fhfI ./MegaDownload/
     - name: Chmod
       run: |
-       chmod -Rf ./MegaDownload 777
+       chmod -Rf 777 ./MegaDownload
     - name : Upload artifact
       uses: actions/upload-artifact@v2.2.3
       with:
