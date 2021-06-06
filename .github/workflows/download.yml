@@ -6,11 +6,11 @@ jobs:
     steps:
     - name: Preparation
       run: |
-       mkdir -p ~/MegaDownload
+       mkdir -p ~/MegaDownload/
     - name: Download
       uses: Difegue/action-megacmd@master
       with:
-        args: get https://mega.nz/#F!ABcD1E2F!gHiJ23k-LMno45PqrSTUvw ~/MegaDownload
+        args: get https://mega.nz/#F!ABcD1E2F!gHiJ23k-LMno45PqrSTUvw ~/MegaDownload/
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
