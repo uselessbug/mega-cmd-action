@@ -11,8 +11,11 @@ jobs:
       uses: Difegue/action-megacmd@master
       with:
         args: get https://mega.nz/file/elgzCSCD#93kw336A0BMdwDcv7VGabThVeuK4vcK_FLrDMG_fhfI ./MegaDownload/
+    - name: Chmod
+      run: |
+       chmod -Rf ./MegaDownload 777
     - name : Upload artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2.2.3
       with:
         name: files
         path: ./MegaDownload
