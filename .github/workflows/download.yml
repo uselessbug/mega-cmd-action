@@ -2,18 +2,17 @@ name: MegaCMD-Download
 on: push
 jobs:
   AutoDownloaderProcess:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Preparation
-      shell: cmd
       run: |
-       mkdir D:\MegaDownload
+       mkdir -p ~/MegaDownload
     - name: Download
       uses: Difegue/action-megacmd@master
       with:
-        args: get https://mega.nz/#F!ABcD1E2F!gHiJ23k-LMno45PqrSTUvw D:\MegaDownload
+        args: get https://mega.nz/#F!ABcD1E2F!gHiJ23k-LMno45PqrSTUvw ~/MegaDownload
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
         name: files
-        path: D:\MegaDownload
+        path: ~/MegaDownload
